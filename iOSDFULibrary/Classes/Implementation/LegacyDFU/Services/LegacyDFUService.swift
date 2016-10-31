@@ -26,7 +26,7 @@ internal typealias Callback = (Void) -> Void
 internal typealias ErrorCallback = (_ error:DFUError, _ withMessage:String) -> Void
 
 @objc internal class LegacyDFUService : NSObject, CBPeripheralDelegate {
-    static internal let UUID = CBUUID.init(string: "sF000FFC0-0451-4000-B000-000000000000")
+    static internal let UUID = CBUUID.init(string: "0xF000FFC0-0451-4000-B000-000000000000")
     //static internal let UUID = CBUUID.init(string: "00001530-1212-EFDE-1523-785FEABCD123")
     static func matches(_ service:CBService) -> Bool {
         return service.uuid.isEqual(UUID)
