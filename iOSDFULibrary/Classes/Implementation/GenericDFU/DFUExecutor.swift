@@ -169,12 +169,15 @@ class DFUExecutor : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         for aService in peripheral.services! {
             initiator.logger?.logWith(.verbose, message: "Discovered Service \(aService.uuid) on peripheral \(peripheral)")
+            initiator.logger?.logWith(.verbose, message: "Discovered1 Service \(SecureDFUService.UUID) on peripheral \(peripheral)")
             if aService.uuid == SecureDFUService.UUID {
                 //First priority if SDFU
                 self.didDiscoverDFUService(true)
                 return
             }
             
+            
+            initiator.logger?.logWith(.verbose, message: "Discovered2 Service \(LegacyDFUService.UUID) on peripheral \(peripheral)")
             if aService.uuid == LegacyDFUService.UUID {
                 //Second priority is legacy DFU
                 self.didDiscoverDFUService(false)
@@ -182,6 +185,7 @@ class DFUExecutor : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             }
         }
         //No DFU found at this point, disconnect and report
+        initiator.logger?.logWith(.verbose, message: "22222")
         self.deviceNotSupported()
     }
 
