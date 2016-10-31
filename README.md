@@ -21,7 +21,7 @@
 
 **For Carthage:**
 
-   - Create a new **Cartfile** in your project's root with the following contents
+  -- Create a new **Cartfile** in your project's root with the following contents
 
          github "NordicSemiconductor/IOS-Pods-DFU-Library" ~> x.y //Replace x.y with your required version
 
