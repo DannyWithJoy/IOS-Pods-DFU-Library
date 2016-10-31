@@ -23,8 +23,8 @@
 import CoreBluetooth
 
 internal class DFUPacket {
-    static fileprivate let UUID = CBUUID(string: "0xF000FFC2-0451-4000-B000-000000000000")
-    
+    //static fileprivate let UUID = CBUUID(string: "0xF000FFC2-0451-4000-B000-000000000000")
+    static fileprivate let UUID = CBUUID(string: "00001532-1212-EFDE-1523-785FEABCD123")
     static func matches(_ characteristic:CBCharacteristic) -> Bool {
         return characteristic.uuid.isEqual(UUID)
     }
