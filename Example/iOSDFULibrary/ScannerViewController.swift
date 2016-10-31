@@ -45,8 +45,8 @@ class ScannerViewController: UIViewController, CBCentralManagerDelegate, UITable
         //0x23, 0xD1, 0xBC, 0xEA, 0x5F, 0x78, 0x23, 0x15,
         //0xDE, 0xEF, 0x12, 0x12, 0x00, 0x00, 0x00, 0x00
         
-//        legacyDfuServiceUUID    = CBUUID(string: "F000FFC0-0451-0400-B000-000000000000")
-        legacyDfuServiceUUID    = CBUUID(string: "00001530-1212-EFDE-1523-785FEABCD123")
+        legacyDfuServiceUUID    = CBUUID(string: "0xF000FFC0-0451-4000-B000-000000000000")
+        //legacyDfuServiceUUID    = CBUUID(string: "00001530-1212-EFDE-1523-785FEABCD123")
         secureDfuServiceUUID    = CBUUID(string: "FE59")
         super.init(coder: aDecoder)
         centralManager.delegate = self
